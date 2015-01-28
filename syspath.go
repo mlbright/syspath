@@ -7,8 +7,7 @@ import (
 )
 
 func list() {
-	fmt.Println("elements of %PATH%:\n")
-	elements := strings.Split(os.Getenv("PATH"), ";")
+	elements := strings.Split(os.Getenv("PATH"), string(os.PathListSeparator))
 	for _, path := range elements {
 		fmt.Println(path)
 	}
